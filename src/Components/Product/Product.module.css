@@ -1,0 +1,123 @@
+section>p{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+section>p>span{
+    cursor: pointer;
+    color: #1698d9;
+    position: relative;
+}
+section>p>span:hover::after{
+    content: '';
+}
+section>p>span::after{
+    content: '_ _ _';
+    position: absolute;
+    top: 17%;
+    left: 0;
+}
+
+
+.border{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    min-width: 320px;
+    height: 480px;
+    background-color: #1698d9;
+    clip-path: polygon(13.5% 0,100% 0,100% 100%, 0 100%,0 9%);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+
+.container{
+
+    overflow: hidden;
+    clip-path: polygon(13.5% 0,100% 0,100% 100%, 0 100%,0 9%);
+    width: 310px;
+    height: 470px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 45px;
+    position: relative;
+    border-radius: 10px;
+}
+.container *{
+    font-family: "Trebuchet MS";
+}
+
+
+
+.container>img{
+    position: absolute;
+    right: -10%;
+    bottom: -19%;
+}
+
+
+
+.container>p{
+    color: #666;
+}
+.container>p:nth-child(2){
+    color: #666;
+}
+.container>p:nth-child(4){
+    margin-top: 18px;
+}
+
+
+.container>h2{
+    display: inline-flex;
+    flex-direction: column;
+}
+.container>h2>span:nth-child(1){
+    font-size: 2em;
+}
+.container>h2>span:nth-child(2){}
+
+
+
+/*.disabled{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(238, 238, 238, 0.45);
+    top:0;
+    left: 0;
+    border-radius: 10px;
+} Недоработан*/
+
+
+
+.servingWeight{
+    width: 80px;
+    height: 80px;
+
+    background-color: #1698d9;
+
+    border-radius: 50%;
+
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+}
+.servingWeight>span{
+    color: white;
+}
+.servingWeight>span:nth-child(1){
+    font-size: 2.4em;
+}
+.servingWeight>span:nth-child(2){
+    font-size: 1.4em;
+}

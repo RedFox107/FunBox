@@ -1,0 +1,26 @@
+:root{
+    --bg_shadow:rgba(0, 0, 0, 0.5);
+}
+.root{
+    min-height: 100vh;
+    background: linear-gradient(0deg,var(--bg_shadow),transparent 40% 60%,var(--bg_shadow));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.root>h1{
+    color: white;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+main{
+    width: 100%;
+    max-width: 1200px;
+}
+main>article{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}

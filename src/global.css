@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Exo2.0-Thin";
+    src: url("font/Exo2.0-Thin.otf");
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Exo2.0-Thin";
+}
+#root{
+    background-image: url("imgs/Pattern.png");
+}
