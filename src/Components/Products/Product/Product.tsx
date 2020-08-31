@@ -50,8 +50,7 @@ const Product: React.FC<IProductProps> = ({hovered ,setHover,product, selected, 
         <section>
             <div
                 className={`${s.border} ${!inStock && s.soldOut} ${selected && s.selected}`}
-                onClick={inStock ? clickHandler : () => {
-                }}
+                onClick={inStock ? clickHandler : () => {}}
                 onMouseLeave={mouseLeaveHandler}
             >
                 <div className={s.container}>
@@ -69,7 +68,7 @@ const Product: React.FC<IProductProps> = ({hovered ,setHover,product, selected, 
 
                     <PortionAndMouse additionalText={additionalText} mouseCount={mouseCount} portion={portion}/>
 
-                    <div className={s.servingWeight}><span>{portionWeight}</span><span>кг</span></div>
+                    <div className={s.servingWeight}><span>{portionWeight.toString().replace(".",",")}</span><span>кг</span></div>
                 </div>
             </div>
             <BottomText clickHandler={clickHandler} selected={selected} description={description} filling={filling}
