@@ -3,7 +3,7 @@ const REMOVE_SELECT = "REMOVE_SELECT";
 const SET_DATA = "SET_DATA";
 
 type someOrNull<T> = T|null;
-type templateCreator = (temp:string)=>string;
+
 type action = ISetDataAC & IActionCreatorWithId;
 
 export interface IProduct{
@@ -34,14 +34,11 @@ interface ISetDataAC extends IAction{
 
 const initialState:IStateProductResucer = {
     products:null,
-    selected:[]
+    selected:[1]
 }
 
-export const create_OutOfStock_Template:templateCreator = (filling)=>{
-    return `Печалька, с ${filling} закончился`
-};
-
 const reducer = (state:IStateProductResucer = initialState,action:action)=>{
+
     switch (action.type) {
         case SELECT_PRODUCT:
             return {
@@ -51,7 +48,7 @@ const reducer = (state:IStateProductResucer = initialState,action:action)=>{
         case REMOVE_SELECT:
             return {
                 ...state,
-                selected: state.selected.filter(id=>id===action.id)
+                selected: state.selected.filter(id=>id!==action.id)
             }
         case SET_DATA:
             return {

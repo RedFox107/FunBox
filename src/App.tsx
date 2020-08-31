@@ -12,8 +12,8 @@ const Data:IProduct[] = [
         mouseCount:1,
         portion:10,
         filling:"фуа-гра",
-        description:"",
-        cartTopDescription:"",
+        description:"Печень утки разварная с артишоками.",
+        cartTopDescription:"Сказочное заморское яство",
         additionalText:""
     },
     {
@@ -23,22 +23,23 @@ const Data:IProduct[] = [
         mouseCount:2,
         portion:40,
         filling:"рыбой",
-        description:"",
-        cartTopDescription:"",
+        description:"Головы щучьи с чесноком да свежайшая сёмгушка.",
+        cartTopDescription:"Сказочное заморское яство",
         additionalText:""
     },
     {
         id:2,
-        inStock:true,
+        inStock:false,
         portionWeight:5,
         mouseCount:5,
         portion:100,
         filling:"курой",
-        description:"",
-        cartTopDescription:"",
+        description:"Филе из цыплят с трюфелями в бульоне.",
+        cartTopDescription:"Сказочное заморское яство",
         additionalText:"Заказчик доволен"
     }
 ]
+
 
 interface IAppProps {
     setDataAC:Function,
