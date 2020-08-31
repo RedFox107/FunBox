@@ -1,4 +1,5 @@
 section{
+
     max-width: 340px;
 }
 
@@ -25,8 +26,39 @@ section>p>span::after{
     left: 0;
 }
 
+/*-----hover-----*/
+.hover,
+.hover .servingWeight,
+.selected.hover,
+.selected.hover .servingWeight,
+.hoveredAndSelectCartTopDesc{
+    transition: 0.5s;
+}
+.hover{
+    background-color: #2ea8e6;
+}
+.hover .servingWeight{
+    background-color: #2ea8e6;
+}
+.selected.hover .servingWeight{
+    background-color: #e62e7a ;
+}
+.selected.hover{
+    background-color: #e62e7a ;
+}
+.hoveredAndSelectCartTopDesc{
+    color: #e62e7a !important;
+}
+/*-----hover-end-----*/
+
+
+.soldOutYellowText{
+    color: #ffff66;
+}
 
 .border{
+    transition: 0.5s;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,16 +66,22 @@ section>p>span::after{
     min-width: 320px;
     height: 480px;
     background-color: #1698d9;
+
     clip-path: polygon(13.5% 0,100% 0,100% 100%, 0 100%,0 9%);
+    -webkit-clip-path: polygon(13.5% 0,100% 0,100% 100%, 0 100%,0 9%);
     border-radius: 10px;
     margin: 10px;
 }
 .soldOut{
+    cursor: initial;
     background-color: #b3b3b3;;
 }
 .soldOut>.container>p,
 .soldOut>.container>h2{
     color: #b3b3b3;
+}
+.soldOut>.container>p:nth-child(5){
+    margin-top: 13px;
 }
 .soldOut .servingWeight{
     background-color: #b3b3b3;
@@ -52,6 +90,7 @@ section>p>span::after{
 
 
 .selected,.selected .servingWeight{
+    transition: 0.5s;
     background-color: #d91667;
 }
 
@@ -94,6 +133,7 @@ section>p>span::after{
 .container>p:nth-child(4){
     margin-top: 13px;
 }
+
 
 
 .container>h2{
