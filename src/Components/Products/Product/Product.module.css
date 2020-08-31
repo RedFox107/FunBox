@@ -2,6 +2,7 @@ section>p{
     text-align: center;
     color: white;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 section>p>span{
     cursor: pointer;

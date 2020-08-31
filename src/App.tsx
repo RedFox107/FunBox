@@ -1,17 +1,64 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from './App.module.css';
-import Product from "./Components/Product/Product";
+import {IProduct, IStateProductResucer,setDataAC} from "./Redux/reducers/productReducer";
+import {connect, RootStateOrAny} from "react-redux";
+import Products from "./Components/Products/Products";
 
-const App:React.FC = ()=> {
+const Data:IProduct[] = [
+    {
+        id:0,
+        inStock:true,
+        portionWeight:0.5,
+        mouseCount:1,
+        portion:10,
+        filling:"фуа-гра",
+        description:"",
+        cartTopDescription:"",
+        additionalText:""
+    },
+    {
+        id:1,
+        inStock:true,
+        portionWeight:2,
+        mouseCount:2,
+        portion:40,
+        filling:"рыбой",
+        description:"",
+        cartTopDescription:"",
+        additionalText:""
+    },
+    {
+        id:2,
+        inStock:true,
+        portionWeight:5,
+        mouseCount:5,
+        portion:100,
+        filling:"курой",
+        description:"",
+        cartTopDescription:"",
+        additionalText:"Заказчик доволен"
+    }
+]
+
+interface IAppProps {
+    setDataAC:Function,
+    prod:IStateProductResucer;
+}
+
+const App:React.FC<IAppProps> = ({setDataAC,prod})=> {
+    /*Временное решение, из-за отсутсвия API*/
+    useEffect(()=>{
+        setDataAC(Data);
+    },[Data])
+    const {products,selected} = prod;
+    if(products===null)
+        return <div>Loading</div>
+     /*------------------------------*/
   return (
     <div className={s.root}>
         <h1>Ты сегодня покормил кота?</h1>
         <main>
-            <article>
-                <Product/>
-                <Product/>
-                <Product/>
-            </article>
+            <Products products={products as Array<IProduct>} selected={selected}/>
         </main>
     </div>
   );
@@ -19,4 +66,8 @@ const App:React.FC = ()=> {
 
 
 
-export default App;
+
+export default connect(
+    (state:RootStateOrAny)=>({prod:state.ProductReducer}),
+    {setDataAC})
+(App);

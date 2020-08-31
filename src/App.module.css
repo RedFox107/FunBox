@@ -1,9 +1,6 @@
-:root{
-    --bg_shadow:rgba(0, 0, 0, 0.5);
-}
 .root{
     min-height: 100vh;
-    background: linear-gradient(0deg,var(--bg_shadow),transparent 40% 60%,var(--bg_shadow));
+    background: linear-gradient(0deg,rgba(0, 0, 0, 0.5),transparent 40% 60%,rgba(0,0,0,0.5));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,6 +10,7 @@
     color: white;
     font-weight: normal;
     margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 main{
     width: 100%;
