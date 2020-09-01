@@ -35,13 +35,16 @@ const Product: React.FC<IProductProps> = ({hovered ,setHover,product, selected, 
         } else {
             selectProductAC(id)
         }
-        setHover((prev:number[])=>prev.filter(e=>e!==id));
+
     }
     const mouseLeaveHandler:React.MouseEventHandler = (e)=>{
         setHover((prev:number[])=>[...prev,id]);
         e.currentTarget.classList.add(s.hover);
     }
 
+    const mouseOverHandler:React.MouseEventHandler = (e)=>{
+        setHover((prev:number[])=>prev.filter(e=>e!==id));
+    }
     //flags
     const wasHover = hovered.includes(id);
     const selectedHoveredAndInStock = wasHover&&inStock&&selected
@@ -51,7 +54,8 @@ const Product: React.FC<IProductProps> = ({hovered ,setHover,product, selected, 
             <div
                 className={`${s.border} ${!inStock && s.soldOut} ${selected && s.selected}`}
                 onClick={inStock ? clickHandler : () => {}}
-                onMouseLeave={mouseLeaveHandler}
+                onMouseOut={mouseLeaveHandler}
+                onMouseOver={mouseOverHandler}
             >
                 <div className={s.container}>
 
